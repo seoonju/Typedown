@@ -210,7 +210,7 @@ class StateRender {
     }
     nextSibling && needToRemoved.push(nextSibling)
 
-    firstOldDom.insertAdjacentHTML('beforebegin', html)
+    firstOldDom.insertAdjacentHTML('beforebegin', sanitize(html, PREVIEW_DOMPURIFY_CONFIG))
 
     Array.from(needToRemoved).forEach(dom => dom.remove())
 
